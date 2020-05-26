@@ -22,3 +22,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### UI框架
+Layui
+
+[CND引入样式](https://www.layuicdn.com/)
