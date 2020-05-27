@@ -12,7 +12,9 @@ module.exports = {
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
         "comma-dangle": ["error", "never"],
         "space-before-function-paren": "always",
-        // indent: ["error", 2],
-        indent: ["off", 2]
+        indent: ["off", 2],
+        quotes: [2, "single", "avoid-escape"],
+        "eol-last": 0,
+        semi: ["error", "always"]
     }
 };
