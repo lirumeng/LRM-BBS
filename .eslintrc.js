@@ -3,18 +3,19 @@ module.exports = {
     env: {
         node: true
     },
-    extends: ["plugin:vue/essential", "@vue/standard"],
+    extends: ['plugin:vue/essential', '@vue/standard'],
     parserOptions: {
-        parser: "babel-eslint"
+        parser: 'babel-eslint'
     },
     rules: {
-        "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-        "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-        "comma-dangle": ["error", "never"],
-        "space-before-function-paren": "always",
-        indent: ["off", 2],
-        quotes: [2, "single", "avoid-escape"],
-        "eol-last": 0,
-        semi: ["error", "always"]
+        'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+        'vue/script-indent': ['error', 2, { baseIndent: 1 }],
+        indent: 'off',
+        'space-before-function-paren': 'never',
+        'eol-last': 0,
+        camelcase: 'never',
+        'space-in-parens': 'never',
+        'func-call-spacing': 'never'
     }
-};
+}
