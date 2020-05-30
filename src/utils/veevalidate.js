@@ -21,11 +21,11 @@ extend('max', max)
 extend('is_not', is_not)
 
 // 自定义校验
-extend('name', {
+extend('nickname', {
     validate: (value) => {
         return !/^\d+/.test(value)
     },
-    message: '不能以纯数字为昵称'
+    message: '昵称不能以数字开头'
 })
 
 extend('email', {
@@ -38,6 +38,14 @@ extend('password', {
         return value.length >= 6
     },
     message: '不符合最小长度要求'
+})
+
+extend('repassword', {
+    params: ['target'],
+    validate(value, { target }) {
+        return value === target
+    },
+    message: '两次输入密码不一致'
 })
 
 extend('code', {
@@ -60,25 +68,25 @@ localize('zh_CN', {
         password: '密码',
         repassword: '确认密码',
         oldpassword: '旧密码',
-        name: '昵称',
+        nickname: '昵称',
         username: '用户名',
         code: '验证码',
         title: '标题',
         catelog: '分类'
     },
     fields: {
-        catelog: {
-            is_not: '请选择{_field_}'
-        },
+        // catelog: {
+        //     is_not: '请选择{_field_}'
+        // }
         // email: {
         //     email: '请输入正确的{_field_}',
         //     required: '请输入{_field_}'
         // },
-        name: {
-            min: (field, { length }) => {
-                return `请在${field}输入至少${length}个字符`
-            }
-        }
+        // name: {
+        //     min: (field, { length }) => {
+        //         return `请在${field}输入至少${length}个字符`
+        //     }
+        // },
         // password: {
         //     confirmed: (field, { target }) => {
         //         return `两次输入的${field}不一致！`

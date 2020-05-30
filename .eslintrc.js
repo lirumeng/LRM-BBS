@@ -16,6 +16,9 @@ module.exports = {
         'eol-last': 0,
         camelcase: 'never',
         'space-in-parens': 'never',
-        'func-call-spacing': 'never'
+        'func-call-spacing': 'never',
+        'no-unused-vars': 'never',
+        'vue/no-unused-components': 'never',
+        'operator-linebreak': 'never'
     }
 }

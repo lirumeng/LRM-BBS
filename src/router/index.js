@@ -15,18 +15,18 @@ const Forget = () =>
 Vue.use(VueRouter)
 
 const routes = [{
-        path: '/',
+        path: '/login',
         name: 'login',
         component: Login
     },
     {
         path: '/register',
-        name: 'home',
+        name: 'register',
         component: Register
     },
     {
         path: '/forget',
-        name: 'home',
+        name: 'forget',
         component: Forget
     }
 ]
