@@ -93,8 +93,9 @@
                 <div class="layui-form-item">
                   <button class="layui-btn"
                           alert="1"
-                          lay-filter="*"
-                          lay-submit>提交</button>
+                          lay-submit
+                          type="button"
+                          @click="submit()">提交</button>
                 </div>
               </form>
             </div>
@@ -106,7 +107,7 @@
 </template>
 
 <script>
-  import { getCode } from '@/api/login'
+  import { getCode, forget } from '@/api/login'
 
   export default {
     name: 'Login',
@@ -115,8 +116,7 @@
         svg: '',
         username: '',
         password: '',
-        code: '',
-        errorMsg: []
+        code: ''
       }
     },
     mounted() {
@@ -130,17 +130,16 @@
           }
         })
       },
-      checkForm() {
-        this.errorMsg = []
-        if (!this.username) {
-          this.errorMsg.push('用户名不能为空')
-        }
-        if (!this.password) {
-          this.errorMsg.push('密码不能为空')
-        }
-        if (!this.code) {
-          this.errorMsg.push('验证码不能为空')
-        }
+      submit() {
+        forget({
+          username: this.username,
+          code: this.code
+        }).then((res) => {
+          console.log(res)
+          if (res.code === 200) {
+            alert('邮件发送成功')
+          }
+        })
       }
     }
   }

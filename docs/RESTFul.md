@@ -19,3 +19,11 @@ import svgCaptcha from "svg-captcha";
 
 const captcha = svgCaptcha.create();
 ```
+
+#### 邮件服务 NodeMailer
+
+[node-mailer](https://www.npmjs.com/package/node-mailer)
+
+#### 日期处理类库
+
+[moment.js](http://momentjs.cn/)

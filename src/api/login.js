@@ -15,4 +15,21 @@ const getCode = async() => {
     return result
 }
 
-export { getCode }
+const forget = async(option) => {
+    let result = ''
+    try {
+        result = await axios.post('/forget', {
+            ...option
+        })
+
+        if (result.status === 200) {
+            return result.data
+        }
+    } catch (e) {
+        console.warn(e)
+    }
+
+    return result
+}
+
+export { getCode, forget }
